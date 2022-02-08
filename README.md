@@ -7,5 +7,5 @@ TBD
 
 
 
-# Shoutout
-Thank you to Nick Gambill, who lead this project and created an opportunity for us to get involved with our community.
+# Showing Gratitude
+Thank you to Nick Gambill, who lead this project and created an opportunity for us to get involved within our community.
