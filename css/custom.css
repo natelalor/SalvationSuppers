@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --spinning-logo-color: rgb(1,0,0);
+    --background-color-1: rgb(37, 37, 37);
+    --text-color-1: rgb(222, 222, 222);
+    --red-color: rgb(190, 31, 31);
+}
+img{
+    max-width: 100%;
+}
+main{
+    width: 100%;
+    margin: auto;
+    border: solid red 3px;
+    background-color: var(--background-color-1);
+    color:rgb(222, 222, 222);
+}
+.spinning_logo_container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--spinning-logo-color);
+}
+.volunteer_button{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5%;
+    right: 5%;
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: var(--red-color);
+    color: var(--text-color-1);
+    transition: all 200ms ease;
+}
+.volunteer_button:hover{
+    box-shadow: 5px -5px 10px white;
+    transform: translate(3px, -3px);
+}
+/* ===========Section 1===========*/
+.section_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+    margin: auto;
+}
+.sponsor_pictures{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.sponsor_pictures>div{
+    flex-grow: 1;
+    width: 28%;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: var(--background-color-1);
+}
+/*========Section 2==========*/
+.section_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.section_2>div>img{
+    width: 30%;
+}

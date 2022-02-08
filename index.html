@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvation Suppers</title>
+    <link rel = "stylesheet"
+            href = "css/custom.css"
+            type = "text/css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class = "volunteer_button">
+            <p>Volunteer Now</p>
+        </div>
+    
+        <div class = "spinning_logo_container"> <!-- rotating logo-->
+                <img src="images/salvation.gif" 
+                alt="spinning logo">    
+
+        </div>
+
+        <div class = "section_1">
+            <!-- location -->
+            <div class = "location_container"> 
+                <h2>64 Mainstreet</h2>
+                <h3>Burlington Free Meals Program</h3>
+            </div>
+
+            <!-- Sponsors -->
+            <div class="sponsor_pictures">
+                <div>
+                    <img src = "images/zero_gravity.png" alt="zero gravity logo">
+                </div>
+                <div>
+                    <img src = "images/brio_coffee.png" alt="brio coffee logo">
+                </div>
+                <div>
+                    <img src = "images/single_pebble.png" alt="single pebble logo">
+                </div>
+            </div>
+        </div>
+
+        <!-- image gallery of food -->
+        <div class = "section_2"> 
+            <div class="wrapper"> <!-- image container-->
+
+                <!-- THIS WILL BE FLEX BOX OF IMAGES HERE-->
+                
+                <img src="images/salvation_pic_1.jpg" alt="food pic">
+                <img src="images/salvation_pic_2.png" alt="food pic">
+                <img src="images/salvation_pic_3.jpg" alt="food pic">
+                <img src="images/salvation_pic_4.jpg" alt="food pic">
+                <img src="images/salvation_pic_5.jpg" alt="food pic">
+                <img src="images/salvation_pic_6.jpg" alt="food pic">
+                <img src="images/salvation_pic_7.jpg" alt="food pic">
+                <img src="images/salvation_pic_8.png" alt="food pic">
+                <img src="images/salvation_pic_9.png" alt="food pic">
+            
+            </div>
+        </div>
+
+        <div class = "section_3">
+            <!-- more info (next to volunteer form) -->
+            <div>
+                <h3>
+                    Mondays & Tuesdays
+                </h3>
+                <h2>
+                    Free Meals Program
+                </h2>
+            </div>
+            
+            <div> <!-- volunteer sign up -->
+                <form action = "#" method = "post">
+                    <h2>Volunteer</h2>
+                    <p>
+                        <label for = "txtFirstName">First Name</label>
+                        <input id = "txtFirstName"     
+                            name = "txtFirstName"
+                            maxlength = "25"
+                            type = "text" required>
+                    </p>
+                    <p>
+                        <label for = "txtLastName">Last Name</label>
+                        <input id = "txtLastName"     
+                            name = "txtLastName"
+                            maxlength = "25"
+                            type = "text" required>
+                    </p>
+                    <p>
+                        <label for = "txtEmail">Email</label>
+                        <input id = "txtEmail"     
+                            name = "txtEmail"
+                            maxlength = "25"
+                            type = "email" required>
+                    </p>
+                    <p>
+                        <label for = "telPhoneNumber">Phone Number</label>
+                        <input id = "telPhoneNumber"     
+                            name = "telPhoneNumber"
+                            type = "tel">
+                    </p>  
+                </form>
+            </div>
+        </div>
+
+        <footer> <!-- TBD -->
+
+        </footer>
+
+    </main>
+</body>
+</html>
