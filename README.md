@@ -8,4 +8,4 @@ TBD
 
 
 # Showing Gratitude
-Thank you to Nick Gambill, who lead this project and created an opportunity for us to get involved within our community.
+Thank you to Nick Gambill, who enabled this project and created an opportunity for us to get involved within our community.
