@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet"> 
 
 </head>
+
 <body>
     <nav>
         <div class = "top_logo">
@@ -47,50 +48,59 @@
                     sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
+            
 
         </div>
-
+        <div class = "free_meals_container">
+            <div class = "black_overlay"></div>
+            <img src="images/salvation_pic_6.jpg" alt="Food picture">
+            <h3 class = "free_meals_title">Burlington Free Meals Program</h3>
+        </div>
+        
         <div class = "section_1">
             <!-- location -->
             <div class = "location_container"> 
-                <h3>Burlington Free Meals Program</h3>
+                <h2>Where we are</h2>
                 <h1>64 Mainstreet</h1>
                 <h1>Mondays & Tuesdays</h1>
                 <h1>Free Meals Program</h1>
             </div>
 
-            <div> <!-- volunteer sign up -->
-                <form action = "#" method = "post" id = "sign_up">
-                    <h2>Volunteer</h2>
-                    <p>
-                        <label for = "txtFirstName">First Name</label>
-                        <input id = "txtFirstName"     
-                            name = "txtFirstName"
-                            maxlength = "25"
-                            type = "text" required>
-                    </p>
-                    <p>
-                        <label for = "txtLastName">Last Name</label>
-                        <input id = "txtLastName"     
-                            name = "txtLastName"
-                            maxlength = "25"
-                            type = "text" required>
-                    </p>
-                    <p>
-                        <label for = "txtEmail">Email</label>
-                        <input id = "txtEmail"     
-                            name = "txtEmail"
-                            maxlength = "25"
-                            type = "email" required>
-                    </p>
-                    <p>
-                        <label for = "telPhoneNumber">Phone Number</label>
-                        <input id = "telPhoneNumber"     
-                            name = "telPhoneNumber"
-                            type = "tel">
-                    </p>  
-                </form>
-            </div>
+            <!-- volunteer sign up -->
+            <form action = "#" method = "post" id = "sign_up" class = "volunteer_form">
+                <h2>Volunteer</h2>
+                <p>
+                    <label for = "txtFirstName">First Name</label>
+                    <input id = "txtFirstName"     
+                        name = "txtFirstName"
+                        maxlength = "25"
+                        type = "text" required>
+                </p>
+                <p>
+                    <label for = "txtLastName">Last Name</label>
+                    <input id = "txtLastName"     
+                        name = "txtLastName"
+                        maxlength = "25"
+                        type = "text" required>
+                </p>
+                <p>
+                    <label for = "txtEmail">Email</label>
+                    <input id = "txtEmail"     
+                        name = "txtEmail"
+                        maxlength = "25"
+                        type = "email" required>
+                </p>
+                <p>
+                    <label for = "telPhoneNumber">Phone Number</label>
+                    <input id = "telPhoneNumber"     
+                        name = "telPhoneNumber"
+                        type = "tel">
+                </p>  
+                <p>
+                    <label for = "txtInterest">Interest</label>
+                    <textarea id = "txtInterest" name = "txtInterest" placeholder = "How would you like to get involved?"></textarea>
+                </p>
+            </form>
 
         </div>
 
@@ -144,23 +154,24 @@
             </div>
             
         </div>
-        <!-- Sponsors -->
-        <div class = "full_sponsors_container">
-            <h3>Check out our sponsors:</h3> <!-- ARE THESE SPONSORS? OR SHOULD WE SAY "SEE WHO WE'RE COLLABORATING WITH IN OUR COMMUNITY:"? -->
-            <div class="sponsor_pictures">
-                <a href = "https://www.zerogravitybeer.com/" class = "sponsor_container">
-                    <img src = "images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
-                </a>
-                <a href = "https://www.briocoffeeworks.com/" class = "sponsor_container">
-                    <img src = "images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
-                </a>
-                <a href = "https://asinglepebble.com/" class = "sponsor_container">
-                    <img src = "images/single_pebble.png" alt="single pebble logo" class = "image_logo">
-                </a>
-            </div>
-        </div>
-
+        
         <footer> <!-- TBD -->
+        
+            <!-- Sponsors -->
+            <div class = "full_sponsors_container">
+                <h3>Check out our sponsors:</h3> <!-- ARE THESE SPONSORS? OR SHOULD WE SAY "SEE WHO WE'RE COLLABORATING WITH IN OUR COMMUNITY:"? -->
+                <div class="sponsor_pictures">
+                    <a href = "https://www.zerogravitybeer.com/" class = "sponsor_container">
+                        <img src = "images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
+                    </a>
+                    <a href = "https://www.briocoffeeworks.com/" class = "sponsor_container">
+                        <img src = "images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
+                    </a>
+                    <a href = "https://asinglepebble.com/" class = "sponsor_container">
+                        <img src = "images/single_pebble.png" alt="single pebble logo" class = "image_logo">
+                    </a>
+                </div>
+            </div>
 
         </footer>
 

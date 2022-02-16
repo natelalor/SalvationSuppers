@@ -1,3 +1,10 @@
+/*
+=== TO DO LIST ===
+- configure for mobile as well as website
+- double check website on other browsers
+- fix "infinite wrap" on image section
+*/
+
 *{
     padding: 0;
     margin: 0;
@@ -6,8 +13,8 @@
     font-family: 'Exo 2', sans-serif;
 }
 :root{
-    --spinning-logo-color: rgb(1,0,0);
-    --background-color-1: rgb(37, 37, 37);
+    --spinning-logo-color: rgb(4, 0, 0);
+    --background-color-1: rgb(4, 0, 0); /* rgb (37,37.37) is old grey */
     --text-color-1: rgb(222, 222, 222);
     --red-color: rgb(190, 31, 31);
 }
@@ -19,6 +26,7 @@ img{
 }
 main{
     width: 100%;
+    overflow: hidden;
     margin: auto;
     background-color: var(--background-color-1);
     color:rgb(222, 222, 222);
@@ -26,7 +34,6 @@ main{
 /*======= Spinning Logo ======*/
 .spinning_logo_container{
     width: 100%;
-    height: 160vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -69,6 +76,7 @@ nav{
     width: auto;
     margin: auto;
     padding: 1%;
+    z-index: 10;
     box-shadow: 0px 0px 20px var(--red-color);
 }
 
@@ -98,14 +106,118 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    border: solid 2px purple;
+}
+.image_logo{
+    border-radius: 100px;
+}
+.location_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px white;
+    padding: 1em;
+}
+.location_container>h3{
+    justify-content:center;
+    font-size: 50px;
+}
+.location_container>h1{
+    align-content: left;
+}
+.volunteer_form{
+    border: solid 5px white;
     padding: 2%;
+    width: 30%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.volunteer_form>p{
+    display: flex;
+    flex-direction: column;
+}
+.volunteer_form>p>input{
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+}
+/*=====Image Overlay======*/
+.free_meals_container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+.free_meals_container>img{
+    position: absolute;
+    width: 100%;
+    transform: translateY(-10vh);
+}
+.free_meals_title{
+    position: relative;
+    margin: 1em auto;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    font-size: 50px;
+}
+.black_overlay{
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    z-index: 1;
+    box-shadow: inset 0px 0px 20px black;
+    background-color: rgba(0, 0, 0, 0.473);
+}
+/*========Section 2==========*/
+.section_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 300%;
+    padding: 2% 0;
+    border-top: solid white 5px;
+    border-bottom: solid white 5px;
+    background-color: var(--spinning-logo-color);
     margin: auto;
 }
+.image_header{
+    margin-left: 5em;
+}
+.food_pic_container{
+    overflow: hidden;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 5px;
+    background-color: var(--spinning-logo-color);
+    animation: picture_animation 15s linear infinite;
+}
+.section_2>div>img{ /* i think this is the same as the class "food_pic" i just made oops */
+    width: 100%;
+    height: 100%;
+}
+
+/*========Section 3==========*/
+.section_3{
+    width: 100%;
+    display: block;
+    height: 30em;
+    border: solid 2px purple;
+}
+
+/*=====Sponsors=====*/
 .full_sponsors_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 40%;
+    margin: auto;
     border-left: solid 3px var(---red-color);
 }
 .full_sponsors_container>h3{
@@ -133,69 +245,24 @@ nav{
     box-shadow: 0px 0px 10px var(--red-color);
     transform: scale(1.1);
 }
-.image_logo{
-    border-radius: 100px;
-}
-.location_container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.location_container>h3{
-    justify-content:center;
-    font-size: 50px;
-}
-.location_contain>h1{
-    align-content: left;
-}
-/*========Section 2==========*/
-.section_2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 80%;
-    border-radius: 10px;
-    background-color: var(--spinning-logo-color);
-    margin: auto;
-}
-.image_header{
-    margin-left: 5em;
-}
-.food_pic_container{
-    overflow: hidden;
-    width: 25vw;
-    height: 25vw;
-    margin-top: 2em;
-    border-radius: 5px;
-    background-color: var(--spinning-logo-color);
-}
-.section_2>div>img{ /* i think this is the same as the class "food_pic" i just made oops */
-    width: 100%;
-    height: 100%;
-}
-
-/*========Section 3==========*/
-.section_3{
-    width: 100%;
-    display: block;
-    height: 30em;
-    border: solid 2px purple;
-}
-form {
-    margin-top: 5em;
-}
-
 
 /* footer test */
 /* this is here so we can test when you click volunteer how far down it goes. a temporary addition */
 footer {
-    height: 100em;
+    border-top: solid white 1px;
+    padding: 1%;
+    margin: 3em 0;
 }
 
 
-
+@keyframes picture_animation{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
 
 
 
