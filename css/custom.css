@@ -121,9 +121,7 @@ nav{
     justify-content: center;
     padding: 2%;
     width: 100%;
-    border: solid 2px green;
-    /*THIS BACKGROUND IS SUPPOSED TO SHOW UP*/
-    background-image: url("/images/red-image-background.jpg");
+    background-image: url("../images/red-image-background.jpg");
 }
 .location_right_side{
     display: flex;
@@ -135,19 +133,22 @@ nav{
     flex-direction: column;
     margin-bottom: 2em;
 }
-.location_info_container>h4, .location_info_container>h3, .location_info_container>h1{
-    color: black;
-}
+
 .location_image{
     margin-right: 2em;
     background-color: red;
+    border: solid 1px white;
     height: 70vh;
     width: 22em;
 }
 .location_map{
-    background-color: blue;
+    /*background-color: blue;*/
+    border: solid 1px white;
     height: 40vh;
     width: 20em;
+}
+.location_hours{
+    margin-top: 1em;
 }
 /*=======Form========*/
 .volunteer_form{
