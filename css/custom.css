@@ -40,11 +40,12 @@ main{
     justify-content: center;
     flex-direction: column;
     background-color: var(--spinning-logo-color);
+    height: 80vh;
 }
 .spinning_logo_container>img{
     width: 50%;
 }
-.text{
+.text{ /* who we are */
     display:block;
     justify-content:center;
     margin: 3em;
