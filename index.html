@@ -56,7 +56,7 @@
         <!-- location -->
         <div class = "location_container">
             <div class = "location_image">
-                <p>Gunna be an image of location</p>
+                <img src="images/location.jpeg" alt="da house vibes">
             </div>
             <div class = "location_right_side">
                 <div class = "location_info_container">
@@ -70,13 +70,19 @@
                         alt = "maps location">
                 </div>
             </div>
+            <div class = "location_black_overlay"></div>
         </div>
   
-        <div class = "section_1">
-
+        <div class = "form_section">
+            <div class = "form_image">
+                <div class = "form_image_overlay">
+                    <h2>COME GET INVOLVED</h2>
+                </div>
+                <img id = "rotating_food_pic" src = "images/salvation_pic_3.jpg">
+            </div>
             <!-- volunteer sign up -->
             <form action = "#" method = "post" id = "sign_up" class = "volunteer_form">
-                <h2>Volunteer</h2>
+                <h2>Sign Up</h2>
                 <p>
                     <label for = "txtFirstName">First Name</label>
                     <input id = "txtFirstName"     
@@ -108,15 +114,19 @@
                     <label for = "txtInterest">Interest</label>
                     <textarea id = "txtInterest" name = "txtInterest" placeholder = "How would you like to get involved?"></textarea>
                 </p>
+                <p>
+                    <input id = "submitButton"     
+                        name = "submitButton"
+                        type = "submit"
+                        value = "Submit">
+                </p>
             </form>
 
         </div>
 
-
+<!--
         <h1 class = "image_header">A glimpse of what we do:</h1>
-        <!-- image gallery of food -->
-        <div class = "section_2">  <!-- image container-->
-                <!-- THIS WILL BE FLEX BOX OF IMAGES HERE-->
+        <div class = "section_2">  
                 <div class = "food_pic_container">
                     <img src="images/salvation_pic_1.jpg" alt="food pic" class = "food_pic">
                 </div>
@@ -147,7 +157,6 @@
         </div>
 
         <div class = "section_3" id = "call_test">
-            <!-- more info (next to volunteer form) -->
             <div class = "tbd">
                 <h2>
                     64 Mainstreet
@@ -163,21 +172,31 @@
             
         </div>
         
+    -->
         <footer> <!-- TBD -->
         
             <!-- Sponsors -->
             <div class = "full_sponsors_container">
                 <h3>Check out our sponsors:</h3> <!-- ARE THESE SPONSORS? OR SHOULD WE SAY "SEE WHO WE'RE COLLABORATING WITH IN OUR COMMUNITY:"? -->
                 <div class="sponsor_pictures">
-                    <a href = "https://www.zerogravitybeer.com/" class = "sponsor_container">
-                        <img src = "images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
-                    </a>
-                    <a href = "https://www.briocoffeeworks.com/" class = "sponsor_container">
-                        <img src = "images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
-                    </a>
-                    <a href = "https://asinglepebble.com/" class = "sponsor_container">
-                        <img src = "images/single_pebble.png" alt="single pebble logo" class = "image_logo">
-                    </a>
+                    <div class = "zero_gravity_container all_sponsor_containers">
+                        <a href = "https://www.zerogravitybeer.com/" class = "sponsor_container" id = "zero_gravity">
+                            <img src = "images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
+                        </a>
+                        <p class = "show_p">Zero Gravity</p>
+                    </div>
+                    <div class = "brio_coffee_container all_sponsor_containers">
+                        <a href = "https://www.briocoffeeworks.com/" class = "sponsor_container" id = "brio_coffee">
+                            <img src = "images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
+                        </a>
+                        <p class = "show_p">Brio Coffee</p>
+                    </div>
+                    <div class = "single_pebble_container all_sponsor_containers">
+                        <a href = "https://asinglepebble.com/" class = "sponsor_container">
+                            <img src = "images/single_pebble.png" alt="single pebble logo" class = "image_logo" id = "single_pebble">
+                        </a>
+                        <p class = "show_p">Single Pebble</p>
+                    </div>
                 </div>
             </div>
 

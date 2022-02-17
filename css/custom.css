@@ -2,7 +2,8 @@
 === TO DO LIST ===
 - configure for mobile as well as website
 - double check website on other browsers
-- fix "infinite wrap" on image section
+- fix "Volunteer Now" button to actually go to volunteer form
+- fix image warping on transitions
 */
 
 *{
@@ -101,25 +102,14 @@ nav{
     transform: translate(3px, -3px);
     cursor: pointer;
 }
-/* ===========Section 1===========*/
-.section_1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    border: solid 2px purple;
-}
-.image_logo{
-    border-radius: 100px;
-}
 /*========Location=======*/
 .location_container{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 2%;
+    box-shadow: inset 0px 0px 20px black;
+    padding: 3%;
     width: 100%;
     background-image: url("../images/red-image-background.jpg");
 }
@@ -127,37 +117,81 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 2;
 }
 .location_info_container{
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
 }
-
+.location_black_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 77vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 1;
+}
 .location_image{
     margin-right: 2em;
     background-color: red;
     border: solid 1px white;
     height: 70vh;
     width: 22em;
+    z-index: 2;
 }
 .location_map{
-    /*background-color: blue;*/
     border: solid 1px white;
     height: 40vh;
     width: 20em;
+    z-index: 2;
 }
 .location_hours{
     margin-top: 1em;
 }
+/* ===========Section 1===========*/
+.form_section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 2em 10%;
+    margin: auto;
+}
+.image_logo{
+    border-radius: 100px;
+}
 /*=======Form========*/
+.submitted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.submitted>h2{
+    text-align: center;
+    font-size: 20px;
+}
+.submitted>h3{
+    text-align: center;
+    margin-top: 1em;
+}
+.submitted>img{
+    width: 20%;
+    height: auto;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
 .volunteer_form{
-    border: solid 5px white;
-    background-image: linear-gradient(to bottom right, var(--red-color), rgb(82, 30, 30));
+    /*background-color: rgba(176, 55, 55, 0.658);*/
+    background-color: var(--red-color);
+    min-height: 70vh;
     padding: 2%;
-    width: 30%;
+    width: 40%;
     margin-top: 2em;
     margin-bottom: 2em;
+    border-radius: 8px;
 }
 .volunteer_form>h2{
     font-size: 2em;
@@ -169,10 +203,82 @@ nav{
 }
 .volunteer_form>p>input{
     height: 30px;
-    border-radius: 30px;
+    border-radius: 3px;
+    background-color: transparent;
     padding-left: 10px;
     border: none;
+    color: white;
+    border-bottom: solid 1px white;
+    opacity: 0.8;
+    transition: all 200ms ease;
 }
+.volunteer_form>p>textarea{
+    transition: all 200ms ease;
+    opacity: 0.8;
+    border-radius: 3px;
+    height: 80px;
+    border: none;
+}
+.volunteer_form>p>input:hover, .volunteer_form>p>input:focus{
+    background-color: white;
+    color: black;
+}
+.volunteer_form>p>textarea:hover{
+    opacity: 1;
+}
+#submitButton{
+    border: solid 2px white;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 1%;
+    height: auto;
+    margin: auto;
+    width: 50%;
+}
+#submitButton:hover{
+    color: red;
+    cursor: pointer;
+    background-color: white;
+}
+#submitButton:focus{
+    color: white;
+    background-color: var(--red-color);
+}
+.form_image_overlay{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.form_image_overlay>h2 {
+    border: solid 2px white;
+    width: 50%;
+    text-align: center;
+}
+.form_image{
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 60vh;
+    width: 60%;
+    box-shadow: 0px 0px 30px var(--red-color);
+}
+.form_image>img{
+    height: 100%;
+    width: 100%;
+    transition: all 200ms ease;
+}
+
 /*=====Image Overlay======*/
 .free_meals_container{
     position: relative;
@@ -245,7 +351,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 50%;
     margin: auto;
     border-left: solid 3px var(---red-color);
 }
@@ -264,8 +370,8 @@ nav{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 9vw;
-    width: 9vw;
+    height: 10vw;
+    width: 10vw;
     border-radius: 10vw;
     background-color: white;
     transition: all 200ms ease;
@@ -275,12 +381,43 @@ nav{
     transform: scale(1.1);
 }
 
+.all_sponsor_containers{
+    color: black;
+    transition: all 200ms ease;
+}
+.all_sponsor_containers:hover{
+    color: white;
+}
+.all_sponsor_containers>p{
+    text-align: center;
+    margin-top: 1em;
+}
+
 /* footer test */
 /* this is here so we can test when you click volunteer how far down it goes. a temporary addition */
 footer {
     border-top: solid white 1px;
     padding: 1%;
     margin: 3em 0;
+}
+
+/*==========Admin=======*/
+.title_wrapper{
+    padding: 1% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title_wrapper>a, .title_wrapper>a:visited{
+    color: white;
+    text-decoration: none;
+}
+.admin_wrapper{
+    background-color: white;
+    color: black;
+}
+.table_wrapper{
+    border: solid 3px black;
 }
 
 
