@@ -41,7 +41,7 @@ main{
     justify-content: center;
     flex-direction: column;
     background-color: var(--spinning-logo-color);
-    height: 80vh;
+    height: 88vh;
 }
 .spinning_logo_container>img{
     width: 50%;
@@ -83,7 +83,19 @@ nav{
 }
 
 .top_logo{
-    width: 40vh;
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+}
+.logo_letter{
+    color: var(--red-color);
+    font-size: 25px;
+    transition: all 100ms ease;
+}
+.logo_letter:hover{
+    color: white;
+    cursor: pointer;
+    transform: translateY(-3px);
 }
 .volunteer_button{
     display: flex;
@@ -128,14 +140,14 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
-    height: 77vh;
+    height: 82vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.466);
     z-index: 1;
 }
 .location_image{
     margin-right: 2em;
-    background-color: red;
+    background-color: darkred;
     border: solid 1px white;
     height: 70vh;
     width: 22em;
@@ -222,6 +234,9 @@ nav{
 .volunteer_form>p>input:hover, .volunteer_form>p>input:focus{
     background-color: white;
     color: black;
+}
+.volunteer_form>p>input:focus{
+    outline: solid 1px black;
 }
 .volunteer_form>p>textarea:hover{
     opacity: 1;

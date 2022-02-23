@@ -6,7 +6,7 @@ $("#brio_coffee").on("mouseover", show_sponsor_name)
 $("#single_pebble").on("mouseover", show_sponsor_name)
 
 var i = 0;
-setInterval(image_transition, 5000);
+setInterval(image_transition, 3200);
 function image_transition() {
     if(i == 8){
         i = 0;
