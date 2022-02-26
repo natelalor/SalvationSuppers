@@ -56,13 +56,15 @@ main{
 .text>h1{
     justify-content:center;
     padding: 1em;
+    margin: auto;
+    width: 50%;
     text-align: center;
+    border-bottom: solid 1px white;
 }
 .text>p{
-    border-top: solid 1px white;
     margin: 0 17%;
     padding-top: 1em;
-    font-size: 27px;
+    font-size: 25px;
     line-height: 1.3em;
     text-indent: 50px;
 }
@@ -151,13 +153,26 @@ nav{
     border: solid 1px white;
     height: 70vh;
     width: 22em;
+    overflow: hidden;
     z-index: 2;
 }
+.location_image>img{
+    height: 100%;
+    width: auto;
+}
 .location_map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: solid 1px white;
     height: 40vh;
+    overflow: hidden;
     width: 20em;
     z-index: 2;
+}
+.location_map>img{
+    height: auto;
+    width: 30vw;
 }
 .location_hours{
     margin-top: 1em;
@@ -173,6 +188,68 @@ nav{
 }
 .image_logo{
     border-radius: 100px;
+}
+/*======Total Meals=======*/
+.meals_donated_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+}
+.meals_inside_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 2%;
+    box-shadow: 0px 0px 10px var(--red-color);
+}
+.meals_donated_container>h2{
+    width: auto;
+    text-align: center;
+    padding: 2%;
+    border-radius: 10px;
+}
+.meal_amount{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    font-size: 35px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--red-color);
+}
+
+@keyframes meals_animation{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+        color: white;
+    }
+    30%{
+        transform: translateY(0px);
+        opacity: 1;
+        color: red;
+    }
+    70%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+#digit_1{
+    animation: meals_animation 5s ease-in-out infinite;
+}
+#digit_2{
+    animation: meals_animation 5s ease-in-out infinite;
+    animation-delay: 300ms;
+}
+#digit_3{
+    animation: meals_animation 5s ease-in-out infinite;
+    animation-delay: 600ms;
 }
 /*=======Form========*/
 .submitted{
@@ -227,6 +304,7 @@ nav{
 .volunteer_form>p>textarea{
     transition: all 200ms ease;
     opacity: 0.8;
+    padding: 1%;
     border-radius: 3px;
     height: 80px;
     border: none;
@@ -277,7 +355,14 @@ nav{
 .form_image_overlay>h2 {
     border: solid 2px white;
     width: 50%;
+    padding: 1% 0;
     text-align: center;
+    transition: all ease-in-out 200ms;
+}
+.form_image_overlay>h2:hover{
+    background-color: var(--red-color);
+    transform: scale(1.1);
+    cursor:default;
 }
 .form_image{
     overflow: hidden;
@@ -366,7 +451,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     margin: auto;
     border-left: solid 3px var(---red-color);
 }
@@ -435,15 +520,6 @@ footer {
     border: solid 3px black;
 }
 
-
-@keyframes picture_animation{
-    0%{
-        transform: translateX(0%);
-    }
-    100%{
-        transform: translateX(-300%);
-    }
-}
 
 
 

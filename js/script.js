@@ -4,7 +4,9 @@ $("#submitButton").on("click", form_click);
 $("#zero_gravity").on("mouseover", show_sponsor_name)
 $("#brio_coffee").on("mouseover", show_sponsor_name)
 $("#single_pebble").on("mouseover", show_sponsor_name)
+$("#slow_food").on("mouseover", show_sponsor_name)
 
+//Image transition section
 var i = 0;
 setInterval(image_transition, 3200);
 function image_transition() {
@@ -24,19 +26,21 @@ function image_transition() {
     $("#rotating_food_pic").attr("src", images[i]);
 
     i++;
-
     
 }
 
+//form submitted animation
 function form_click() {
     $("#sign_up").empty();
     $("#sign_up").addClass("submitted");
     $("#sign_up").append('<h2>Thank You!</h2><h3>We will contact you shortly.</h3><!--<img src="images/happiness.png" alt="smile face">-->');
 }
-
+//show sponsor
 function show_sponsor_name(){
     $(".zero_gravity_container>p").addClass("show_p")
 }
+//add to number of meals donated
+
 
 
 
