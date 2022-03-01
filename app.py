@@ -3,6 +3,12 @@ from os import listdir
 import json
 import time
 
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+import smtplib
+
 app = Flask(__name__)
 
 #startup
@@ -24,4 +30,29 @@ def save_form():
             fo.write(str(x))
             fo.write(str("\n"))
         fo.write(str("\n"))
+
+    smtp = smtplib.SMTP('smtp.gmail.com', 587)
+    smtp.ehlo()
+    smtp.starttls()
+    smtp.login('SalvationSupperAuto@gmail.com', 'TAWikrEQs9Jjz9v')
+
+    subject = "New Salvation Suppers Volunteer"
+    #text = "<p>A new volunteer, " + the_array[0] + " " + the_array[1] + " just signed up!</p>"
+    text = """\
+        <html>
+        <head></head>
+        <body>
+            <h2>New Volunteer!</h2>
+            <p>A new volunteer, """ + the_array[0] + """ """ + the_array[1] + """ just signed up!</p>
+            <p>See more info by clicking <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a></p>
+        </body>
+        </html>
+        """
+    msg = MIMEMultipart()
+    msg['Subject'] = subject
+    msg.attach(MIMEText(text, 'html'))
+
+    smtp.sendmail(from_addr="SalvationSupperAuto@gmail.com",
+              to_addrs="tallembe@uvm.edu", msg=msg.as_string())
+    smtp.quit()
     return "success"
