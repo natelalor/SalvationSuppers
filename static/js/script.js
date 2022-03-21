@@ -99,6 +99,9 @@ function display_volunteers(){
         }
     });
 }
+function save_header(){
+    
+}
 //Image transition section
 var i = 0;
 setInterval(image_transition, 3200);

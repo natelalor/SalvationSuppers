@@ -520,6 +520,11 @@ nav{
     transition: all 200ms ease;
 }
 
+.form_position{
+    border: 2px solid yellow;
+    height:10em;
+}
+
 /*=====Image Overlay======*/
 .free_meals_container{
     position: relative;
@@ -760,9 +765,32 @@ footer {
         box-shadow: 0px 0px 0px black;
     }
 }
-
-
-
+/*========admin text input=========*/
+.event_input_container, .meals_wrapper{
+    display: flex;
+    flex: 2 1 auto;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    border: solid 2px black;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    width: 80%;
+    padding: 2%;
+    margin: auto;
+}
+#event_input{
+    width: 76%;
+    border-radius: 5px 0px 0px 5px;
+    border: solid black 1px;
+    border-right: none;
+    height: 40px;
+}
+#event_input_submit{
+    width: 20%;
+    border-radius: 0px 5px 5px 0px;
+    border: solid black 1px;
+    height: 40px;
+}
 
 /* via: https://www.sliderrevolution.com/resources/css-button-hover-effects/ */
 
