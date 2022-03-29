@@ -1,0 +1,40 @@
+.spinning_logo_container > img {
+    width: 100%;
+  }
+.free_meals_title{
+    font-size: 40px;
+    top: -10%;
+}
+.text > p{
+    margin: 0 5%;
+    font-size: 22px;
+}
+.location_black_overlay{
+    max-height: 77vh;
+}
+.form_section{
+    flex-direction: column;
+    padding: none;
+}
+.form_image{
+    width: 100%;
+    border-radius: 0px;
+}
+.volunteer_form{
+    width: 70%;
+}
+.sponsor_pictures{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.all_sponsor_containers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 50%;
+}
+.sponsor_container{
+    height: 13vw;
+    width: 13vw;
+}

@@ -1,0 +1,32 @@
+.top_logo{
+    display: none;
+}
+nav{
+    justify-content: center;
+}
+.free_meals_container{
+    height: 35vh;
+}
+.text > h1{
+    width: 80%;
+}
+.text > p{
+    margin: 0 3%;
+    font-size: 20px;
+}
+.location_black_overlay{
+    height: 74vh;
+}
+.location_image{
+    display: none;
+}
+.form_image_overlay > h2{
+    font-size: 37px;
+}
+.volunteer_form{
+    width: 90%;
+}
+.sponsor_container{
+    height: 20vw;
+    width: 20vw;
+}

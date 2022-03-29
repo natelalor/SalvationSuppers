@@ -211,9 +211,9 @@ nav{
     justify-content: space-between;
     align-items: center;
     background-color: var(--spinning-logo-color); 
+    padding: 0.5%;
     width: auto;
     margin: auto;
-    padding: 1%;
     z-index: 10;
     box-shadow: 0px 0px 20px var(--red-color);
 }
@@ -306,7 +306,7 @@ nav{
 }
 .location_map>img{
     height: auto;
-    width: 30vw;
+    width: 100%;
 }
 .location_hours{
     margin-top: 1em;
