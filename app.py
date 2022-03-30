@@ -16,7 +16,7 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 
 users = {
-    "Ty": generate_password_hash("Ilikepie11")
+    "Nick": generate_password_hash("t98yn38P9Y08jmefiI3")
 }
 @auth.verify_password
 def verify_password(username, password):
@@ -78,7 +78,7 @@ def save_form():
         <body>
             <h2>New Volunteer!</h2>
             <p>A new volunteer, """ + the_array[0] + """ """ + the_array[1] + """ just signed up!</p>
-            <p>See more info by clicking <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a></p>
+            <p>See more info by clicking <a href="https://www.salvationsuppersvt.com/admin.html">here</a></p>
         </body>
         </html>
         """
@@ -88,6 +88,6 @@ def save_form():
     msg.attach(MIMEText(html, 'html'))
 
     smtp.sendmail(from_addr="SalvationSupperAuto@gmail.com",
-              to_addrs="tallembe@uvm.edu", msg=msg.as_string())
+              to_addrs="ntgambill@gmail.com", msg=msg.as_string())
     smtp.quit()
     return "success"
