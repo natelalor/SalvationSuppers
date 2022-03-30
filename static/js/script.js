@@ -48,19 +48,22 @@ $("#txtEmail").on("focusout", function(){
 });
 $("#telPhoneNumber").on("focusout", function(){
     phone = $(this).val();
-    if(phone.match(phone_validation)){
+    /*if(phone.match(phone_validation)){
         able_to_save = true;
     }else{
         $("#sign_up").append("<p class='validation_message'>Phone numbers can only have numbers, (), and -</p>")
         able_to_save = false;
-    }
+    }*/
 });
 $("#txtInterest").on("focusout", function(){
     interests = $(this).val();
     if(interests.match(regEx)){
         able_to_save = true;
+    }
+    else if(interests == ""){
+        able_to_save = true;
     }else{
-        $("#sign_up").append("<p class='validation_message'>Your \"intereests\" has invalid characters</p>")
+        $("#sign_up").append("<p class='validation_message'>Your \"interests\" has invalid characters</p>")
         able_to_save = false;
     }
 });

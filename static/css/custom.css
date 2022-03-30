@@ -350,8 +350,6 @@ nav{
     flex-direction: row;
     margin-left: 1%;
     font-size: 35px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--red-color);
 }
 
 @keyframes meals_animation{
@@ -384,6 +382,10 @@ nav{
 #digit_3{
     animation: meals_animation 5s ease-in-out infinite;
     animation-delay: 600ms;
+}
+#digit_4{
+    animation: meals_animation 5s ease-in-out infinite;
+    animation-delay: 900ms;
 }
 /*=======Form========*/
 .submitted{
