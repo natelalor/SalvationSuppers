@@ -1,2 +1,2 @@
 # SalvationSuppers
-// things will be here soon :) //
+The goal of Salvation Suppers is to encourage and support community involvement. The centerpiece of our project is the Burlington Free Meals Program, a collaborative effort between local chefs and the Burlington Salvation Army. On Mondays we serve free dinners. Our network includes food professionals, artists, and students - all of whom Salvation Suppers supports in their efforts to give back to the community.
