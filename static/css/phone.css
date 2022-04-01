@@ -21,7 +21,7 @@ nav{
     display: none;
 }
 .form_image_overlay > h2{
-    font-size: 37px;
+    font-size: small;
 }
 .volunteer_form{
     width: 90%;
