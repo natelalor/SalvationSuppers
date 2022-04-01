@@ -4,6 +4,9 @@
 nav{
     justify-content: center;
 }
+.event_container > p {
+    font-size: small;
+}
 .free_meals_container{
     height: 35vh;
 }
