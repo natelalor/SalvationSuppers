@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salvation Suppers, VT</title>
     <link rel="icon" href="../static/images/salvation_logo.png">
+
+    <!-- CSS Links -->
     <link rel = "stylesheet"
         href = "../static/css/custom.css"
         type = "text/css">
@@ -24,7 +26,7 @@
     <script src="../static/js/script.js" defer></script>
 
 
-    <!-- Nate font testing here -->
+    <!-- Font Info -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet"> 
@@ -32,13 +34,13 @@
 </head>
 
 <body>
+    <!-- Banner -->
     <div class = "event_container">
         <p>Slow Food USA Hosting Event at Club Metronome, Burlington, May 7th 2022!</p>
     </div>
     <nav>
+        <!-- Fun letters in top left of NAV -->
         <div class = "top_logo">
-            <!--<img src="images/temp_horizontal_logo.png" 
-                alt="logo top corner">-->
                 <div class = "logo_letter">S</div>
                 <div class = "logo_letter">a</div>
                 <div class = "logo_letter">l</div>
@@ -56,7 +58,7 @@
                 <div class = "logo_letter">r</div>
                 <div class = "logo_letter">s</div>
         </div>
-        
+        <!-- Volunteer button on NAV -->
         <a class="btn draw-border" href = "#go_to_form">Volunteer Now</a>
     </nav>
     <main class="index_main">
@@ -66,12 +68,14 @@
             <img src="../static/images/new_salvation.gif" 
             alt="spinning logo"> 
         </div>
+        <!-- Free Meals Program w/ photo underlay -->
         <div class = "free_meals_container">
             <div class = "black_overlay"></div>
             <img src="../static/images/salvation_pic_6.jpg" alt="Food picture">
             <h3 class = "free_meals_title">Burlington Free Meals Program</h3>
         </div>
         
+        <!-- Who We Are text segment -->
         <div class = "pictures_form_wrapper">
             <div class = "text">
                 <h1>Who We Are</h1>
@@ -98,12 +102,13 @@
                 </div>
             </div>
         </div>
-        <!-- location -->
+        <!-- Location Information segment -->
         <div class = "location_container">
             <div class = "location_image">
                 <img src="../static/images/the_big_salvation.jpeg" alt="Salvation Suppers building">
             </div>
             <div class = "location_right_side">
+                <!-- Location text -->
                 <div class = "location_info_container">
                     <h1>64 Mainstreet</h1>
                     <h4>Burlington, Vermont 05401</h4>
@@ -111,6 +116,7 @@
                     <h4>Mondays</h4>
                     <h4>12pm-6pm</h4>
                 </div>
+                <!-- Google Maps img -->
                 <div class = "location_map" id = "map">
 
                     <!--<iframe 
@@ -129,6 +135,7 @@
             <div class = "location_black_overlay"></div>
         </div>
   
+        <!-- Form & Rotating imgs -->
         <div class = "form_section" id = "go_to_form">
             <div class = "form_image">
                 <div class = "form_image_overlay">
@@ -136,7 +143,7 @@
                 </div>
                 <img id = "rotating_food_pic" src = "../static/images/salvation_pic_3.jpg">
             </div>
-            <!-- volunteer sign up -->
+            <!-- volunteer sign up - form here -->
             <form action = "" method = "post" id = "sign_up" class = "volunteer_form">
                 <h2>Sign Up</h2>
                 <p>
@@ -180,79 +187,35 @@
 
         </div>
 
-<!--
-        <h1 class = "image_header">A glimpse of what we do:</h1>
-        <div class = "section_2">  
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_1.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_2.png" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_3.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_4.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_5.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_6.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_7.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_8.png" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_9.png" alt="food pic" class = "food_pic">
-                </div>
-        </div>
-
-        <div class = "section_3" id = "call_test">
-            <div class = "tbd">
-                <h2>
-                    64 Mainstreet
-                </h2>
-
-                <h3>
-                    Mondays & Tuesdays
-                </h3>
-                <h2>
-                    Free Meals Program
-                </h2>
-            </div>
-            
-        </div>
+        <!-- Footer -->
+        <footer>
         
-    -->
-        <footer> <!-- TBD -->
-        
-            <!-- Sponsors -->
+            <!-- Networking peeps -->
             <div class = "full_sponsors_container">
-                <h3>In collaboration with:</h3> <!-- ARE THESE SPONSORS? OR SHOULD WE SAY "SEE WHO WE'RE COLLABORATING WITH IN OUR COMMUNITY:"? -->
+                <h3>In collaboration with:</h3>
                 <div class="sponsor_pictures">
+                    <!-- Zero Gravity -->
                     <div class = "zero_gravity_container all_sponsor_containers">
                         <a href = "https://www.zerogravitybeer.com/" target="_blank" class = "sponsor_container" id = "zero_gravity">
                             <img src = "../static/images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
                         </a>
                         <p class = "show_p">Zero Gravity</p>
                     </div>
+                    <!-- Brio Coffee -->
                     <div class = "brio_coffee_container all_sponsor_containers">
                         <a href = "https://www.briocoffeeworks.com/" target="_blank" class = "sponsor_container" id = "brio_coffee">
                             <img src = "../static/images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
                         </a>
                         <p class = "show_p">Brio Coffee</p>
                     </div>
+                   <!-- A Single Pebble -->
                     <div class = "single_pebble_container all_sponsor_containers">
                         <a href = "https://asinglepebble.com/" target="_blank" class = "sponsor_container">
                             <img src = "../static/images/single_pebble.png" alt="single pebble logo" class = "image_logo" id = "single_pebble">
                         </a>
                         <p class = "show_p">Single Pebble</p>
                     </div>
+                    <!-- Slow Food -->
                     <div class = "slow_food_container all_sponsor_containers">
                         <a href = "https://www.slowfood.com/" target="_blank" class = "sponsor_container">
                             <img src = "../static/images/slow_food.png" alt="slow food logo" class = "image_logo" id = "slow_food">
@@ -266,4 +229,4 @@
 
     </main>
 </body>
-</html>
+</html> <!-- Thanks for checking out our website! :) -->
