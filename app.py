@@ -1,7 +1,6 @@
-from flask import Flask, render_template, redirect, jsonify,request
-import os
-import json
-import time
+#source venv/bin/activate
+from flask import Flask, render_template, redirect, jsonify, request, flash, url_for
+import os, sqlite3, json, time
 
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -24,46 +23,91 @@ def verify_password(username, password):
             check_password_hash(users.get(username), password):
         return username
 
+#Database connection
+def get_db_connection():
+    conn = sqlite3.connect('database/database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
 #startup
-@app.route("/", methods=["POST","GET"])
+@app.route("/", methods=['POST','GET'])
 def homeStartup():
-    return render_template("index.html", title="index", name="Ty Allembert")
+    conn = get_db_connection()
+    info = conn.execute('SELECT * FROM WebsiteInfo').fetchall()
+    mealsDigits = list(info[0]['numMeals'])
+    conn.close()
+    formSubmitted = False
+
+    if request.method == 'POST':
+        print(request.form)
+        firstName = request.form['firstName']
+        lastName = request.form['lastName']
+        email = request.form['email']
+        phone = request.form['phone']
+        whyHelp = request.form['whyHelp']
+        
+        if not firstName:
+            flash('First Name is required!')
+        elif not lastName:
+            flash('Last Name is required!')
+        elif not email:
+            flash('Email is required!')
+        elif not phone:
+            flash('Phone Number is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute("INSERT INTO Volunteers (firstName, lastName, email, phone, whyHelp) VALUES (?, ?, ?, ?, ?)",
+                        (firstName, lastName, email, phone, whyHelp))
+            conn.commit()
+            conn.close()
+            formSubmitted = True
+    return render_template("index.html", title="index", info=info, formSubmitted = formSubmitted, mealsDigits=mealsDigits)
 #Index
-@app.route("/index.html", methods=["POST","GET"])
+@app.route("/index", methods=["POST","GET"])
 def homeIndex():
     return render_template("index.html", title="index", name="Ty Allembert")
 
 #===admin page===
-@app.route("/admin.html", methods=["POST","GET"])
+@app.route("/admin", methods=["POST","GET"])
 @auth.login_required
 def admin():
-    return render_template("admin.html", title="admin", name="Ty Allembert")
+    conn = get_db_connection()
+    volunteers = conn.execute('SELECT * FROM Volunteers').fetchall()
+    conn.close()
+    if request.method == 'POST':
+        conn = get_db_connection()
+        if 'event_input_submit' in request.form:
+            event = request.form['event_input']
+            change_string = "UPDATE WebsiteInfo SET headerMessage = \'" + event + "\' WHERE id = 1"
+            print(change_string)
+            conn.execute(change_string)
+        if 'meals_input_submit' in request.form:
+            meals = request.form['meals_input']
+            change_string = "UPDATE WebsiteInfo SET numMeals = \'" + meals + "\' WHERE id = 1"
+            print(change_string)
+            conn.execute(change_string)
+        conn.commit()
+        conn.close()
+    return render_template("admin.html", title="admin", volunteers=volunteers)
+#====delete volunteer=====
+@app.route("/delete_volunteer", methods=["POST", "GET"])
+def delete_volunteer():
+    if request.method == 'POST':
 
-@app.route("/display_volunteers", methods=["POST","GET"])
-def display_volunteers():
-    ALL_VOLUNTEERS = []
-    volunteer = []
-    with open("form_data.txt", "r") as file:
-        for line in file.readlines():
-            line = line.rstrip()
-            if line == "*":
-                ALL_VOLUNTEERS.append(volunteer)
-                volunteer = []
-            if line != "*":
-                volunteer.append(line.rstrip())
+        data = request.form.getlist("data[]")
+        id = data[0]
 
-    return jsonify(ALL_VOLUNTEERS)
+        sqlUpdate = "DELETE FROM Volunteers WHERE id = \'"+id+"\'"
+        print(sqlUpdate)
+        conn = get_db_connection()
+        conn.execute(sqlUpdate)
+        conn.commit()
+        conn.close()
+    return "success"
 #===save form function===
 @app.route("/save_form", methods=["POST","GET"])
 def save_form():
-    #the_array=request.get_json(force=True)
-    the_array=request.form.getlist("form[]")
-    print(the_array)
-    with open("form_data.txt", "a") as fo:
-        for x in the_array:
-            fo.write(str(x))
-            fo.write(str("\n"))
-        fo.write(str("*\n"))
+
 
 #Start of sending email
     smtp = smtplib.SMTP('smtp.gmail.com', 587)
@@ -77,8 +121,8 @@ def save_form():
         <head></head>
         <body>
             <h2>New Volunteer!</h2>
-            <p>A new volunteer, """ + the_array[0] + """ """ + the_array[1] + """ just signed up!</p>
-            <p>See more info by clicking <a href="https://www.salvationsuppersvt.com/admin.html">here</a></p>
+            <p>A new volunteer, """ + firstName + """ """ + lastName + """ just signed up!</p>
+            <p>See more info by clicking <a href="https://www.salvationsuppersvt.com/admin">here</a></p>
         </body>
         </html>
         """
@@ -88,6 +132,7 @@ def save_form():
     msg.attach(MIMEText(html, 'html'))
 
     smtp.sendmail(from_addr="SalvationSupperAuto@gmail.com",
-              to_addrs="ntgambill@gmail.com", msg=msg.as_string())
+              to_addrs="tyallembert@gmail.com", msg=msg.as_string())
     smtp.quit()
+    #ntgambill@gmail.com
     return "success"

@@ -26,6 +26,16 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
     <script src="../static/js/script.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCHRSyduzkPwjJ3HDXxdbUNRcbcGV6zF6s
+      &q=64+Main+Burlington,Vermont+USA
+      &zoom=10" -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoicx_d-5b_0-GRtaUaoseES4NJ3-x_TU&callback=initMap"
+      defer
+    ></script>
+
 
 
     <!-- Nate font testing here -->
@@ -37,12 +47,12 @@
 
 <body>
     <div class = "event_container">
-        <p>Slow Food USA Hosting Event at Club Metronome, Burlington, Vermont, May 7th 2022!</p>
+        {% for i in info %}
+            <p>{{ i['headerMessage'] }}</p>
+        {% endfor %}
     </div>
     <nav>
         <div class = "top_logo">
-            <!--<img src="images/temp_horizontal_logo.png" 
-                alt="logo top corner">-->
                 <div class = "logo_letter">S</div>
                 <div class = "logo_letter">a</div>
                 <div class = "logo_letter">l</div>
@@ -80,24 +90,38 @@
             <div class = "text">
                 <h1>Who We Are</h1>
                 <p>
-                    The goal of Salvation Suppers is to encourage and support community involvement. 
-                    The centerpiece of our project is the Burlington Free Meals Program, a collaborative effort between local chefs and the Burlington Salvation Army. 
-                    On Mondays we serve free dinners. Our network includes food professionals, artists, and students - 
-                    all of whom Salvation Suppers supports in their efforts to give back to the community. 
-                </p>
-                <p>
-                    
+                    Salvation Suppers is a community run organization with the goal to support underserved families 
+                    in the Greater Burlington, Vermont area. Due to the rise in food insecurity during the covid 19 pandemic, 
+                    local vendors have teamed up with us to provide meals for those in need. 
                 </p>
             </div>
+            <!--quote about covid 19 rising food insecurity-->
+            <div class = "statistic_container">
+                 <video autoplay loop controls>
+                    <source src="../static/images/red_smoke.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+                <div class = "stat_overlay"></div>
+                <!--PLACEHOLDER STATISTIC, NOT REAL-->
+                <h1>Since the start of the covid 19 pandemic, food insecurity has risen by 15%</h1>
+            </div>
+            
+            <h1>Our Team</h1>
+            <p>
+                The goal of Salvation Suppers is to encourage and support community involvement. 
+                The centerpiece of our project is the Burlington Free Meals Program, a collaborative effort between local chefs and the Burlington Salvation Army. 
+                On Mondays we serve free dinners. Our network includes food professionals, artists, and students - 
+                all of whom Salvation Suppers supports in their efforts to give back to the community. 
+            </p>
         </div>
         <!--Meals Donated Counter-->
         <div class = "meals_donated_container">
             <div class = "meals_inside_container">
                 <h2>Free Meals Served</h2>
                 <div class = "meal_amount">
-                    <h2 id="digit_1">4</h2>
-                    <h2 id="digit_2" >0</h2>
-                    <h2 id="digit_3">0</h2>
+                    <h2 id="digit_1">{{ mealsDigits[0] }}</h2>
+                    <h2 id="digit_2">{{ mealsDigits[1] }}</h2>
+                    <h2 id="digit_3">{{ mealsDigits[2] }}</h2>
                     <h2 id="digit_4">+</h2>
                 </div>
             </div>
@@ -116,27 +140,32 @@
                     <h4>12pm-6pm</h4>
                 </div>
                 <div class = "location_map" id = "map">
-
-                    <!--<iframe 
+                    <!-- for Google Maps API integration-->
+                    <div id="map"></div>
+                    <!-- <iframe 
                         style="border:0" 
                         loading="lazy" 
-                        allowfullscreen
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCHRSyduzkPwjJ3HDXxdbUNRcbcGV6zF6s
                         &q=64+Main+Burlington,Vermont+USA
                         &zoom=10">
-                    </iframe>-->
+                    </iframe> -->
 
-                    <a href="https://www.google.com/maps/place/Salvation+Army/@44.4760737,-73.2190351,17z/data=!4m5!3m4!1s0x4cca7afa1d643c69:0x9dae9e192ad42030!8m2!3d44.4761341!4d-73.2169476"
+                    <!-- <a href="https://www.google.com/maps/place/Salvation+Army/@44.4760737,-73.2190351,17z/data=!4m5!3m4!1s0x4cca7afa1d643c69:0x9dae9e192ad42030!8m2!3d44.4761341!4d-73.2169476"
                         target="_blank" rel="noopener noreferrer">
                         <img src = "../static/images/google-maps.jpg"
                             alt = "maps location">
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class = "location_black_overlay"></div>
         </div>
-  
-        <div class = "form_section" id = "go_to_form">
+        {% if formSubmitted %}
+        <div class = "submitted">
+            <h2>Thank You!</h2><h3>We will contact you shortly.</h3>
+        </div>
+        {% endif %}
+        <div id = "go_to_form"></div>
+        <div class = "form_section">
             <div class = "form_image">
                 <div class = "form_image_overlay">
                     <h2>COME GET INVOLVED</h2>
@@ -144,103 +173,57 @@
                 <img id = "rotating_food_pic" src = "../static/images/salvation_pic_3.jpg">
             </div>
             <!-- volunteer sign up -->
-            <form action = "" method = "post" id = "sign_up" class = "volunteer_form">
+            <form method = "POST" id = "sign_up" class = "volunteer_form">
                 <h2>Sign Up</h2>
                 <p>
-                    <label for = "txtFirstName">First Name</label>
+                    <label for = "firstName">First Name</label>
                     <input id = "txtFirstName"     
-                        name = "txtFirstName"
+                        name = "firstName"
                         maxlength = "25"
+                        value="{{ request.form['firstName'] }}"
                         type = "text" required>
                 </p>
                 <p>
-                    <label for = "txtLastName">Last Name</label>
+                    <label for = "lastName">Last Name</label>
                     <input id = "txtLastName"     
-                        name = "txtLastName"
+                        name = "lastName"
                         maxlength = "25"
+                        value="{{ request.form['lastName'] }}"
                         type = "text" required>
                 </p>
                 <p>
-                    <label for = "txtEmail">Email</label>
+                    <label for = "email">Email</label>
                     <input id = "txtEmail"     
-                        name = "txtEmail"
+                        name = "email"
                         maxlength = "25"
+                        value="{{ request.form['email'] }}"
                         type = "email" required>
                 </p>
                 <p>
-                    <label for = "telPhoneNumber">Phone Number</label>
+                    <label for = "phone">Phone Number</label>
                     <input id = "telPhoneNumber"     
-                        name = "telPhoneNumber"
-                        type = "tel">
+                        name = "phone"
+                        type = "tel"
+                        value="{{ request.form['phone'] }}">
                 </p>  
                 <p>
-                    <label for = "txtInterest">Interest</label>
-                    <textarea id = "txtInterest" name = "txtInterest" placeholder = "How would you like to get involved?"></textarea>
+                    <label for = "whyHelp">Interest</label>
+                    <textarea id = "txtInterest" name = "whyHelp" placeholder = "How would you like to get involved?">{{ request.form['whyHelp'] }}</textarea>
                 </p>
                 <p>
                     <input id = "submitButton"     
                         name = "submitButton"
-                        type = "button"
+                        type = "submit"
                         value = "Submit">
                 </p>
             </form>
 
         </div>
 
-<!--
-        <h1 class = "image_header">A glimpse of what we do:</h1>
-        <div class = "section_2">  
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_1.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_2.png" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_3.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_4.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_5.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_6.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_7.jpg" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_8.png" alt="food pic" class = "food_pic">
-                </div>
-                <div class = "food_pic_container">
-                    <img src="images/salvation_pic_9.png" alt="food pic" class = "food_pic">
-                </div>
-        </div>
-
-        <div class = "section_3" id = "call_test">
-            <div class = "tbd">
-                <h2>
-                    64 Mainstreet
-                </h2>
-
-                <h3>
-                    Mondays & Tuesdays
-                </h3>
-                <h2>
-                    Free Meals Program
-                </h2>
-            </div>
-            
-        </div>
+        <footer>
         
-    -->
-        <footer> <!-- TBD -->
-        
-            <!-- Sponsors -->
             <div class = "full_sponsors_container">
-                <h3>In collaboration with:</h3> <!-- ARE THESE SPONSORS? OR SHOULD WE SAY "SEE WHO WE'RE COLLABORATING WITH IN OUR COMMUNITY:"? -->
+                <h3>In collaboration with:</h3>
                 <div class="sponsor_pictures">
                     <div class = "zero_gravity_container all_sponsor_containers">
                         <a href = "https://www.zerogravitybeer.com/" target="_blank" class = "sponsor_container" id = "zero_gravity">
