@@ -71,7 +71,6 @@ function save_form(){
         $("#sign_up").append('<h2>Thank You!</h2><h3>We will contact you shortly.</h3><!--<img src="images/happiness.png" alt="smile face">-->');
 
         var form_array = [first_name, last_name, email, phone, interests];
-        console.log(form_array);
         $.ajax({
             url: "/save_form",
             type: "post",
@@ -100,7 +99,28 @@ function display_volunteers(){
     });
 }
 function save_header(){
-    
+    //save our header here
+
+    $.ajax({
+        url: "/save_header",
+        type: "post",
+        data:{header: header_text},
+        success: function(response) {
+            console.log(response);
+        }
+    });
+
+}
+function save_num_meals(){
+    // save number of meals here
+    $.ajax({
+        url: "/save_num_meals",
+        type: "post",
+        data:{form:form_array},
+        success: function(response) {
+            console.log(response);
+        }
+    });
 }
 //Image transition section
 var i = 0;
