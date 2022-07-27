@@ -19,27 +19,11 @@ function initMap() {
 
 }
 
-<<<<<<< HEAD
-        var form_array = [first_name, last_name, email, phone, interests];
-        $.ajax({
-            url: "/save_form",
-            type: "post",
-            data:{form:form_array},
-            success: function(response) {
-                console.log(response);
-            }
-        });
-    }
-};
-function display_volunteers(){
-    $(".show_volunteer_container").remove();
-=======
 window.initMap = initMap;
 
 function delete_volunteer(){
     let id = $(this).attr('id').substring(9,$(this).attr('id').length);
     let idData = [id]
->>>>>>> d3c97f9598026123033b16c934e18d3134cd4e59
     $.ajax({
         url: "/delete_volunteer",
         type: 'POST',
@@ -52,36 +36,8 @@ function delete_volunteer(){
             console.log(error);
         }
     });
-<<<<<<< HEAD
-}
-function save_header(){
-    //save our header here
-
-    $.ajax({
-        url: "/save_header",
-        type: "post",
-        data:{header: header_text},
-        success: function(response) {
-            console.log(response);
-        }
-    });
-
-}
-function save_num_meals(){
-    // save number of meals here
-    $.ajax({
-        url: "/save_num_meals",
-        type: "post",
-        data:{form:form_array},
-        success: function(response) {
-            console.log(response);
-        }
-    });
-}
-=======
 };
 
->>>>>>> d3c97f9598026123033b16c934e18d3134cd4e59
 //Image transition section
 var i = 0;
 setInterval(image_transition, 3200);
