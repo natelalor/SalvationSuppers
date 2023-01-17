@@ -24,45 +24,58 @@
 </head>
 
 <body>
-    <main>
+    <main class = "admin_main">
         <div class="admin_background">
             <img src="../static/images/admin_background.jpg">
         </div>
         <div class = "title_wrapper">
             <h1>Admin Page</h1>
-            <a href="/index.html">back</a>
+            <a href="/">back to site</a>
         </div>
         <h3 class="volunteer_title">Volunteers</h3>
         <div class = "table_wrapper">
+            <!--
             <div class = "show_volunteer_container">
                 <input type="button"
                 id="show_volunteer_button"
                 value="Show Volunteers"
                 >
             </div>
+        -->
+            {% for v in volunteers %}
+            <div class = 'all_volunteers'>
+                <div class = "admin_delete_volunteer" id = "volunteer{{ v['id'] }}">✕</div>
+                <p>{{ v['firstName'] }}</p>
+                <p>{{ v['lastName'] }}</p>
+                <p>{{ v['email'] }}</p>
+                <p>{{ v['phone'] }}</p>
+                <p>{{ v['whyHelp'] }}</p>
+            </div>
+            {% endfor %}
         </div>
         <h3 class="volunteer_title">Update Header Message</h3>
-        <div class = "event_input_container">
+        <form method = "POST" class = "event_input_container">
             <input type = "text"
             name = "event_input"
             id = "event_input">
 
-            <input type = "button"
+            <input type = "submit"
             name = "event_input_submit"
             id = "event_input_submit"
             value = "Save">
-        </div>
+        </form>
         <h3 class="volunteer_title">Update Number of Meals</h3>
-        <div class = "meals_wrapper">
+        <form method = "POST" class = "meals_wrapper">
             <input type = "text"
             name = "meals_input"
-            id = "meals_input">
+            id = "meals_input"
+            maxlength = "3">
             
-            <input type = "button"
+            <input type = "submit"
             name = "meals_input_submit"
             id = "meals_input_submit"
             value = "Save">
-        </div>
+        </form>
     </main>
 </body>
 </html>
