@@ -2,23 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- Hey! That's us! -->
     <meta name="author" content="Nate Lalor Ty Allembert">
-
-    <!-- Keyword testing... -->
     <meta name="description" content="Salvation Suppers provides free meals for those in need in the Greater Burlington Vermont area.">
     <meta name = "keywords" content = "salvation army, salvation army near me, the salvation army, salvation, salvation army pickup, 
-    salvation army donations, salvation army store, donations, community, salvation suppers burlington, salvation suppers vermont, 
-    salvation army drop off, super suppers, suppers to you, easy suppers, food near me, donators, donate, give back, giving back, local, locals, 
+    salvation army donations, salvation army store, salvation army drop off, super suppers, suppers to you, easy suppers, food near me, 
     food, food open near me, takeout food, vermont, burlington vermont, vermont donations, vermont salvation suppers, vermont free meals, 
     burlington free meals, vermont donations">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salvation Suppers, VT</title>
     <link rel="icon" href="../static/images/salvation_logo.png">
-
-    <!-- CSS Links -->
     <link rel = "stylesheet"
         href = "../static/css/custom.css"
         type = "text/css">
@@ -28,7 +21,6 @@
     <link rel = "stylesheet" media = "(max-width: 600px)"
         href = "../static/css/phone.css"
         type = "text/css">
-    <!-- Javascript/JQuery Links --> 
    <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -46,7 +38,7 @@
 
 
 
-    <!-- Font Info -->
+    <!-- Nate font testing here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet"> 
@@ -54,14 +46,12 @@
 </head>
 
 <body>
-    <!-- Banner at top of site -->
     <div class = "event_container">
         {% for i in info %}
             <p>{{ i['headerMessage'] }}</p>
         {% endfor %}
     </div>
     <nav>
-        <!-- Fun letters in top left of NAV -->
         <div class = "top_logo">
                 <div class = "logo_letter">S</div>
                 <div class = "logo_letter">a</div>
@@ -80,8 +70,7 @@
                 <div class = "logo_letter">r</div>
                 <div class = "logo_letter">s</div>
         </div>
-
-        <!-- Volunteer button on NAV -->
+        
         <a class="btn draw-border" href = "#go_to_form">Volunteer Now</a>
     </nav>
     <main class="index_main">
@@ -91,15 +80,12 @@
             <img src="../static/images/new_salvation.gif" 
             alt="spinning logo"> 
         </div>
-
-        <!-- Free Meals Program w/ photo underlay -->
         <div class = "free_meals_container">
             <div class = "black_overlay"></div>
             <img src="../static/images/salvation_pic_6.jpg" alt="Food picture">
             <h3 class = "free_meals_title">Burlington Free Meals Program</h3>
         </div>
         
-        <!-- Who We Are text segment -->
         <div class = "pictures_form_wrapper">
             <div class = "text">
                 <h1>Who We Are</h1>
@@ -125,7 +111,6 @@
                 all of whom Salvation Suppers supports in their efforts to give back to the community. 
             </p>
         </div>
-
         <!--Meals Donated Counter-->
         <div class = "meals_donated_container">
             <div class = "meals_inside_container">
@@ -138,15 +123,12 @@
                 </div>
             </div>
         </div>
-
-        <!-- Location Information segment -->
+        <!-- location -->
         <div class = "location_container">
             <div class = "location_image">
                 <img src="../static/images/the_big_salvation.jpeg" alt="Salvation Suppers building">
             </div>
             <div class = "location_right_side">
-
-                <!-- Location text -->
                 <div class = "location_info_container">
                     <h1>64 Main Street</h1>
                     <h4>Burlington, Vermont 05401</h4>
@@ -154,8 +136,6 @@
                     <h4>Mondays</h4>
                     <h4>12pm-6pm</h4>
                 </div>
-
-                <!-- Google Maps img -->
                 <div class = "location_map" id = "map">
                     <!-- for Google Maps API integration-->
                     <div id="map"></div>
@@ -176,7 +156,6 @@
             </div>
             <div class = "location_black_overlay"></div>
         </div>
-
         {% if formSubmitted %}
         <div class = "submitted">
             <h2>Thank You!</h2><h3>We will contact you shortly.</h3>
@@ -184,17 +163,12 @@
         {% endif %}
         <div id = "go_to_form"></div>
         <div class = "form_section">
-
-  
-        <!-- Form & Rotating imgs -->
-        <div class = "form_section" id = "go_to_form">
             <div class = "form_image">
                 <div class = "form_image_overlay">
                     <h2>COME GET INVOLVED</h2>
                 </div>
                 <img id = "rotating_food_pic" src = "../static/images/salvation_pic_3.jpg">
             </div>
-            
             <!-- volunteer sign up -->
             <form method = "POST" id = "sign_up" class = "volunteer_form">
                 <h2>Sign Up</h2>
@@ -243,40 +217,29 @@
 
         </div>
 
-
-        <!-- Footer -->
         <footer>
         
-            <!-- Networking peeps -->
             <div class = "full_sponsors_container">
                 <h3>In collaboration with:</h3>
                 <div class="sponsor_pictures">
-
-                    <!-- Zero Gravity -->
                     <div class = "zero_gravity_container all_sponsor_containers">
                         <a href = "https://www.zerogravitybeer.com/" target="_blank" class = "sponsor_container" id = "zero_gravity">
                             <img src = "../static/images/zero_gravity.png" alt="zero gravity logo" class = "image_logo">
                         </a>
                         <p class = "show_p">Zero Gravity</p>
                     </div>
-
-                    <!-- Brio Coffee -->
                     <div class = "brio_coffee_container all_sponsor_containers">
                         <a href = "https://www.briocoffeeworks.com/" target="_blank" class = "sponsor_container" id = "brio_coffee">
                             <img src = "../static/images/brio_coffee.png" alt="brio coffee logo" class = "image_logo">
                         </a>
                         <p class = "show_p">Brio Coffee</p>
                     </div>
-
-                   <!-- A Single Pebble -->
                     <div class = "single_pebble_container all_sponsor_containers">
                         <a href = "https://asinglepebble.com/" target="_blank" class = "sponsor_container">
                             <img src = "../static/images/single_pebble.png" alt="single pebble logo" class = "image_logo" id = "single_pebble">
                         </a>
                         <p class = "show_p">Single Pebble</p>
                     </div>
-
-                    <!-- Slow Food -->
                     <div class = "slow_food_container all_sponsor_containers">
                         <a href = "https://www.slowfood.com/" target="_blank" class = "sponsor_container">
                             <img src = "../static/images/slow_food.png" alt="slow food logo" class = "image_logo" id = "slow_food">
@@ -287,7 +250,7 @@
             </div>
 
         </footer>
-        <!-- Thanks for checking out our website! :) -->
+
     </main>
 </body>
 </html>

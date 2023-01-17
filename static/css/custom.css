@@ -322,13 +322,11 @@ nav{
     height: 100%;
     width: auto;
 }
-.location_img_test{
-    border: 1px solid white;
-}
 .location_map{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid 1px white;
     height: 40vh;
     overflow: hidden;
     width: 20em;

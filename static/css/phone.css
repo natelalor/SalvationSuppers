@@ -4,9 +4,6 @@
 nav{
     justify-content: center;
 }
-.event_container > p {
-    font-size: small;
-}
 .free_meals_container{
     height: 35vh;
 }
@@ -24,7 +21,7 @@ nav{
     display: none;
 }
 .form_image_overlay > h2{
-    font-size: medium;
+    font-size: 37px;
 }
 .volunteer_form{
     width: 90%;
