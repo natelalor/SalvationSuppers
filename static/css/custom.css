@@ -68,34 +68,6 @@ img{
     line-height: 1.3em;
     text-indent: 50px;
 }
-.statistic_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 15em;
-    overflow: hidden;
-    position: relative;
-}
-.stat_overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15em;
-    width: 100%;
-    background-color: rgb(0,0,0,0.4);
-}
-.statistic_container>video{
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%
-}
-.statistic_container>h1{
-    position: absolute;
-    width: 50%;
-    text-align: center;
-}
 
 .custom_logo{
     display: flex;
@@ -341,10 +313,6 @@ nav{
 .location_hours{
     margin-top: 1em;
 }
-#map {
-    weight: 100%;
-    height: 200px;
-}
 /* ===========Section 1===========*/
 .form_section{
     display: flex;
@@ -422,26 +390,28 @@ nav{
     animation-delay: 900ms;
 }
 /*=======Form========*/
-#go_to_form{
-    position: absolute;
-    transform: translateY(-150px);
-    height: 0;
-    margin: 0;
-    padding: 0;
-}
 .submitted{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    width: 100%;
-    background-color: rgb(63, 159, 34);
-    box-shadow: inset 0px 0px 5px rgb(100, 224, 62);
+    flex-direction: column;
 }
 .submitted>h2{
-    margin-right: .5em;
+    text-align: center;
+    font-size: 20px;
+}
+.submitted>h3{
+    text-align: center;
+    margin-top: 1em;
+}
+.submitted>img{
+    width: 20%;
+    height: auto;
+    margin-top: 3em;
+    margin-bottom: 2em;
 }
 .volunteer_form{
+    /*background-color: rgba(176, 55, 55, 0.658);*/
     background-color: var(--red-color);
     box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.664);
     min-height: 70vh;
@@ -705,7 +675,7 @@ footer {
     color: white;
     text-decoration: none;
 }
-/*========Admin Volunteer========*/
+/*========Volunteer========*/
 .volunteer_title{
     display: inline-block;
     margin-left: 10%;
@@ -753,28 +723,12 @@ footer {
     animation-play-state: paused;
 }
 .all_volunteers{
-    position: relative;
     border: solid 1px rgb(155, 155, 155);
     box-shadow: 3px 3px 6px black;
     border-radius: 5px;
     width: 45%;
     margin: 1em auto;
     padding: 2%
-}
-.admin_delete_volunteer{
-    padding: 5px 8px;
-    background-color: rgb(230, 230, 230);
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: solid black 1px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-}
-.admin_delete_volunteer:hover{
-    box-shadow: -2px 2px 5px black;
-    transform: translate(2px, -2px)
 }
 @keyframes volunteer_button_wiggle{
     0%{
@@ -816,9 +770,6 @@ footer {
     }
 }
 /*========admin text input=========*/
-.admin_main{
-    padding-bottom: 2em;
-}
 .event_input_container, .meals_wrapper{
     display: flex;
     flex: 2 1 auto;
@@ -831,15 +782,14 @@ footer {
     padding: 2%;
     margin: auto;
 }
-#event_input, #meals_input{
+#event_input{
     width: 76%;
     border-radius: 5px 0px 0px 5px;
     border: solid black 1px;
     border-right: none;
-    padding-left: 1em;
     height: 40px;
 }
-#event_input_submit, #meals_input_submit{
+#event_input_submit{
     width: 20%;
     border-radius: 0px 5px 5px 0px;
     border: solid black 1px;
@@ -891,7 +841,6 @@ footer {
     transition-delay: 0s, 0.25s, 0s;
 }
 .btn {
-    margin-right: 20px;
     background: none;
     border: none;
     cursor: pointer;
