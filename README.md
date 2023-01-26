@@ -1,4 +1,4 @@
-## SalvationSuppers
+## Salvation Suppers Website
 Salvation Suppers is a non-profit organization founded in Burlington, VT in 2020. Its goal is to give back to the community by cooking healthy, delicious, and _real_ food for those in need. The organization wanted to be a centerpiece for community outreach revolving around one of the biggest necessities--food. 
 
 Here is an excerpt from the founder, Nick Gambill:
@@ -11,6 +11,6 @@ With the help of Nick's predetermined vision for the website, we build the Salva
 It was an awesome experience in all aspects. To build a real product for real people and to be able to give back to our community was empowering to say the least. The one downside is once we handed it over to the organization, it became very hard to update and continue working on the product. That being said, some things became outdated and some things could you a few tweaks here or there. But Nick is not worried about that, because he is very happy to have a home base online for Salvation Suppers to continue thriving. Ty and I are also very happy with how it came out, and that we could please the client as well. 
 
 
-
+You can see our work [here](https://www.salvationsuppersvt.com/).
 
 _Project Timeline: January, 2022 - May, 2022_
